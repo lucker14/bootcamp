@@ -19,3 +19,5 @@ In the end when this would work, I'd just need to edit the nginx config itself, 
 The last thing I'd do would be to properelly setup the connection between GH repo and ArgoCD, preferebly by Github Apps connection.
 
 Then obvilslu this whole code would need cleaning and I'd like to split it between TF repo and Helm repo.
+
+Also as you see I didn't bother with standardized Git process using branch protection rules, Pull requests and so on, as I've mentions in this state this is a PoC mess :) 

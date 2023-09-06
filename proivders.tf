@@ -30,7 +30,8 @@ provider "helm" {
 }
 
 module "argocd" {
-  source  = "aigisuk/argocd/kubernetes"
-  version = "0.2.7"
+  source      = "aigisuk/argocd/kubernetes"
+  version     = "0.2.7"
+  values_file = "argo-values.yaml"
 }
 

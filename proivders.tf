@@ -9,6 +9,11 @@ terraform {
       source  = "hashicorp/helm"
       version = "2.11.0"
     }
+
+    template = {
+      source  = "hashicorp/template"
+      version = "2.2.0"
+    }
   }
 }
 
@@ -22,21 +27,10 @@ provider "helm" {
   kubernetes {
     config_path = "~/.kube/config"
   }
-
-  # localhost registry with password protection
-  registry {
-    url      = "oci://localhost:5000"
-    username = "username"
-    password = "password"
-  }
 }
 
-# module "argocd" {
-#   source  = "lablabs/argocd/helm"
-#   version = "1.0.0"
-# }
-
 module "argocd" {
-  source = "https://github.com/anarkioteam/terraform-helm-argocd"
+  source  = "aigisuk/argocd/kubernetes"
+  version = "0.2.7"
 }
 
